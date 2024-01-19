@@ -17,5 +17,3 @@ Pip: https://opensource.com/sites/default/files/gated-content/cheat_sheet_pip.pd
 Pandas: https://pandas.pydata.org/
 Plotting: https://matplotlib.org/
 Git: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
-
-klsdjfl
