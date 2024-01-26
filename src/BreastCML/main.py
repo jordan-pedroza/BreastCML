@@ -13,7 +13,7 @@ def cli():
 def trainmodel(config_path):
     print(config_path)
     model = Model(config_path)
-    
+    model.trainmodel()
 
 
 cli.add_command(trainmodel)

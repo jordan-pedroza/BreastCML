@@ -1,1 +1,3 @@
 NAME: "YML File"
+FOLDER_PATH: "./data/"
+VALID_EXTS: ['.csv']
