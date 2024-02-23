@@ -1,3 +1,4 @@
 NAME: "YML File"
 FOLDER_PATH: "./data/"
 VALID_EXTS: ['.csv']
+MODEL_TYPE: "decision_tree" # decision_tree, ada_boost, or  random_forest
