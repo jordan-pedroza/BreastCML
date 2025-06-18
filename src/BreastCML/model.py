@@ -1,3 +1,4 @@
+import random
 from yml_loader import YmlLoader
 from data_cleaner import DataCleaner
 from sklearn.tree import DecisionTreeClassifier
@@ -9,7 +10,7 @@ class Model():
     #contructor
     def __init__(self, config_path):
         self._YML = YmlLoader(config_path)
-        self._config = self.YML.load_yml()
+        self._config = self._YML.load_yml()
         print(self._config["NAME"])
         self._classifier = None
         self._metrics = None
@@ -27,10 +28,18 @@ class Model():
             
     def test_model(self):
         raise NotImplementedError
+
+    def _split_data(self):
+        self._data[0].drop(columns="id", inplace=True)
+        
+
+
+        # return my 80/20 split 
+        return train_data, test_data
     
     def _clean_data(self):
-        data_cleaner = DataCleaner(self.config["FOLDER_PATH"],
-                                    self.config["VALID_EXTS"][0])
+        data_cleaner = DataCleaner(self._config["FOLDER_PATH"],
+                                    self._config["VALID_EXTS"][0])
         df_list_1 = data_cleaner.load_data()
         print(df_list_1)
         self._data = df_list_1
@@ -46,4 +55,4 @@ class Model():
             raise Exception("Couldn't find DT, ADA Boost or RForest, Using DT Model")
 
     def  _get_xy(self, xy_dataset_to_split):
-        raise NotImplementedError
+        pass
