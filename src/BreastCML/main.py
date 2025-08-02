@@ -14,6 +14,7 @@ def trainmodel(config_path):
     print(config_path)
     model = Model(config_path)
     model.train_model()
+    model.test_model()
 
 
 cli.add_command(trainmodel)
